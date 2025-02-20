@@ -18,6 +18,20 @@ export function ChatBot() {
   const [input, setInput] = React.useState("")
   const scrollAreaRef = React.useRef<HTMLDivElement>(null)
 
+  React.useEffect(() => {
+    // Initialize Chatbase script
+    const script = document.createElement("script")
+    script.src = "https://www.chatbase.co/embed.min.js"
+    script.id = "2WsRxFHN3CvqgutMIlDQ3"
+    script.async = true
+    document.body.appendChild(script)
+
+    return () => {
+      // Cleanup script when component unmounts
+      document.body.removeChild(script)
+    }
+  }, [])
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!input.trim()) return
@@ -26,16 +40,36 @@ export function ChatBot() {
     setMessages((prev) => [...prev, userMessage])
     setInput("")
 
-    // Simulate AI response - Replace with actual AI implementation
-    setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: "Thank you for your question. I'm here to help with any queries about Scrappie's services.",
+    try {
+      // Send message to Chatbase
+      const response = await fetch('https://www.chatbase.co/api/v1/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer g5c73px8lfcsanio61d8nyxo710romvs'
         },
-      ])
-    }, 1000)
+        body: JSON.stringify({
+          messages: [...messages, userMessage].map(msg => ({
+            role: msg.role,
+            content: msg.content
+          })),
+          stream: false
+        })
+      })
+
+      const data = await response.json()
+      
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: data.response
+      }])
+    } catch (error) {
+      console.error('Error:', error)
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: 'Sorry, I encountered an error. Please try again.'
+      }])
+    }
   }
 
   React.useEffect(() => {
@@ -88,4 +122,5 @@ export function ChatBot() {
     </>
   )
 }
+
 

@@ -19,20 +19,20 @@ export default function Home() {
               <p className="text-gray-600 mb-4">Our Service Available in 500092, 500093, 500039</p>
               <div className="grid grid-cols-4 gap-4 mb-6">
                 <div className="flex flex-col items-center">
-                  <Image src="/mobile-icon.png" alt="Mobile" width={32} height={32} />
-                  <span className="text-sm text-gray-600">Mobile</span>
+                  <Image src="/mobile-icon.png" alt="Mobile" width={24} height={24} />
+                  <span className="text-xs text-gray-600">Mobile</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Image src="/address-icon.png" alt="Address" width={32} height={32} />
-                  <span className="text-sm text-gray-600">Address</span>
+                  <Image src="/address-icon.png" alt="Address" width={24} height={24} />
+                  <span className="text-xs text-gray-600">Address</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Image src="/schedule-icon.png" alt="Schedule" width={32} height={32} />
-                  <span className="text-sm text-gray-600">Schedule</span>
+                  <Image src="/schedule-icon.png" alt="Schedule" width={24} height={24} />
+                  <span className="text-xs text-gray-600">Schedule</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Image src="/sell-icon.png" alt="Sell" width={32} height={32} />
-                  <span className="text-sm text-gray-600">Sell</span>
+                  <Image src="/sell-icon.png" alt="Sell" width={24} height={24} />
+                  <span className="text-xs text-gray-600">Sell</span>
                 </div>
               </div>
               <Link href="/scrap-form">
@@ -49,8 +49,8 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           <Card className="bg-card">
             <CardContent className="flex flex-col items-center p-6">
-              <Image src="/section2/bestrates.png" alt="Best Rates" width={80} height={80} />
-              <h3 className="mt-4 font-semibold text-lg">Best Rates</h3>
+              <Image src="/section2/bestrates.png" alt="Best Rates" width={64} height={64} />
+              <h3 className="mt-4 font-semibold">Best Rates</h3>
             </CardContent>
           </Card>
           <Card className="bg-card">
@@ -94,21 +94,21 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card className="p-8">
             <CardContent className="flex flex-col items-center text-center">
-              <Image src="/section3/calendar.png" alt="Schedule" width={80} height={80} className="mb-4" />
+              <Image src="/section3/calendar.png" alt="Schedule" width={64} height={64} className="mb-4" />
               <h3 className="text-2xl font-bold mb-2">Schedule a pickup</h3>
               <p className="text-gray-600">Book through our website or WhatsApp for hassle-free scheduling.</p>
             </CardContent>
           </Card>
           <Card className="p-8">
             <CardContent className="flex flex-col items-center text-center">
-              <Image src="/section3/delivery.png" alt="Pickup" width={80} height={80} className="mb-4" />
+              <Image src="/section3/delivery.png" alt="Pickup" width={64} height={64} className="mb-4" />
               <h3 className="text-2xl font-bold mb-2">Pickup from your Doorstep Team</h3>
               <p className="text-gray-600">Your Pickup Request has been confirmed, and our executive will arrive at your doorstep as per your chosen date and time.</p>
             </CardContent>
           </Card>
           <Card className="p-8">
             <CardContent className="flex flex-col items-center text-center">
-              <Image src="/section3/check-mark.png" alt="Payment" width={80} height={80} className="mb-4" />
+              <Image src="/section3/check-mark.png" alt="Payment" width={64} height={64} className="mb-4" />
               <h3 className="text-2xl font-bold mb-2">Get Paid</h3>
               <p className="text-gray-600">We can provide you with multiple payment options for a hassle-free and flexible payment experience.</p>
             </CardContent>
@@ -166,8 +166,8 @@ export default function Home() {
                   <Image
                     src="/services/house.png"
                     alt="Household Services"
-                    width={250}
-                    height={250}
+                    width={200}
+                    height={200}
                     className="object-contain"
                   />
                 </div>
@@ -194,8 +194,8 @@ export default function Home() {
                   <Image
                     src="/services/office-building.png"
                     alt="Business Services"
-                    width={250}
-                    height={250}
+                    width={200}
+                    height={200}
                     className="object-contain"
                   />
                 </div>
@@ -206,14 +206,14 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-4 bg-blue-50 dark:bg-blue-950/20">
+      <section className="py-16 px-4 bg-blue-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 dark:text-white">TALK TO US</h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-8">
+          <h2 className="text-3xl font-bold mb-4">TALK TO US</h2>
+          <p className="text-gray-600 mb-8">
             Have any questions? We are always open to talk about your business, new projects, creative opportunities and
             how we can help you.
           </p>
-          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white dark:border-green-500 dark:text-green-500 dark:hover:bg-green-500">
+          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
             GET IN TOUCH
           </Button>
         </div>
