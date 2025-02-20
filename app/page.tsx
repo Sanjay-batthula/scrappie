@@ -1,8 +1,12 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ImageCarousel } from "@/components/image-carousel"
+import CountUp from "react-countup"
+import { HoverBorderGradient } from "@/components/hover-border-gradient"
 
 export default function Home() {
   return (
@@ -17,26 +21,17 @@ export default function Home() {
             <div className="bg-white/90 p-8 rounded-lg max-w-md mx-auto">
               <h2 className="text-black text-2xl font-bold mb-4">SELL SCRAP ONLINE TO SCRAPPIE</h2>
               <p className="text-gray-600 mb-4">Our Service Available in 500092, 500093, 500039</p>
-              <div className="grid grid-cols-4 gap-4 mb-6">
-                <div className="flex flex-col items-center">
-                  <Image src="/mobile-icon.png" alt="Mobile" width={24} height={24} />
-                  <span className="text-xs text-gray-600">Mobile</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Image src="/address-icon.png" alt="Address" width={24} height={24} />
-                  <span className="text-xs text-gray-600">Address</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Image src="/schedule-icon.png" alt="Schedule" width={24} height={24} />
-                  <span className="text-xs text-gray-600">Schedule</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Image src="/sell-icon.png" alt="Sell" width={24} height={24} />
-                  <span className="text-xs text-gray-600">Sell</span>
-                </div>
-              </div>
+              <Image 
+                src="/section1/hero.png" 
+                alt="Scrappie Process" 
+                width={400} 
+                height={100} 
+                className="mb-6"
+              />
               <Link href="/scrap-form">
-                <Button className="w-full bg-green-600 hover:bg-green-700">SELL NOW</Button>
+                <Button className="bg-green-600 hover:bg-green-700 rounded-full px-8 py-2">
+                  <span className="text-xl">SELL NOW</span>
+                </Button>
               </Link>
             </div>
           </div>
@@ -47,28 +42,28 @@ export default function Home() {
       {/* Features Section */}
       <section className="py-16 px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          <Card className="bg-card">
-            <CardContent className="flex flex-col items-center p-6">
-              <Image src="/section2/bestrates.png" alt="Best Rates" width={64} height={64} />
-              <h3 className="mt-4 font-semibold">Best Rates</h3>
+          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+            <CardContent className="flex flex-col items-center p-8">
+              <Image src="/section2/bestrates.png" alt="Best Rates" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
+              <h3 className="mt-6 text-xl font-semibold">Best Rates</h3>
             </CardContent>
           </Card>
-          <Card className="bg-card">
-            <CardContent className="flex flex-col items-center p-6">
-              <Image src="/section2/verified.png" alt="Verified Scrap Pickup Team" width={64} height={64} />
-              <h3 className="mt-4 font-semibold">Verified Scrap Pickup Team</h3>
+          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+            <CardContent className="flex flex-col items-center p-8">
+              <Image src="/section2/verified.png" alt="Verified Scrap Pickup Team" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
+              <h3 className="mt-6 text-xl font-semibold">Verified Scrap Pickup Team</h3>
             </CardContent>
           </Card>
-          <Card className="bg-card">
-            <CardContent className="flex flex-col items-center p-6">
-              <Image src="/section2/digital.png" alt="Digital Weighing Scale" width={64} height={64} />
-              <h3 className="mt-4 font-semibold">Digital Weighing Scale</h3>
+          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+            <CardContent className="flex flex-col items-center p-8">
+              <Image src="/section2/digital.png" alt="Digital Weighing Scale" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
+              <h3 className="mt-6 text-xl font-semibold">Digital Weighing Scale</h3>
             </CardContent>
           </Card>
-          <Card className="bg-card">
-            <CardContent className="flex flex-col items-center p-6">
-              <Image src="/section2/hassle.png" alt="Hassle free Pickup" width={64} height={64} />
-              <h3 className="mt-4 font-semibold">Hassle free Pickup</h3>
+          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+            <CardContent className="flex flex-col items-center p-8">
+              <Image src="/section2/hassle.png" alt="Hassle free Pickup" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
+              <h3 className="mt-6 text-xl font-semibold">Hassle free Pickup</h3>
             </CardContent>
           </Card>
         </div>
@@ -82,7 +77,9 @@ export default function Home() {
               <h2 className="text-4xl font-bold mb-4">Book a Pickup Request Now</h2>
               <p className="text-gray-600 mb-8">Make a positive impact on our planet by recycling your waste items.</p>
               <Link href="/scrap-form">
-                <Button className="bg-green-600 hover:bg-green-700 rounded-full px-8 py-2">SELL NOW</Button>
+                <Button className="bg-green-600 hover:bg-green-700 rounded-full px-8 py-2">
+                  <span className="text-xl">SELL NOW</span>
+                </Button>
               </Link>
             </CardContent>
           </Card>
@@ -92,27 +89,65 @@ export default function Home() {
       {/* Process Cards Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="p-8">
-            <CardContent className="flex flex-col items-center text-center">
-              <Image src="/section3/calendar.png" alt="Schedule" width={64} height={64} className="mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Schedule a pickup</h3>
-              <p className="text-gray-600">Book through our website or WhatsApp for hassle-free scheduling.</p>
-            </CardContent>
-          </Card>
-          <Card className="p-8">
-            <CardContent className="flex flex-col items-center text-center">
-              <Image src="/section3/delivery.png" alt="Pickup" width={64} height={64} className="mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Pickup from your Doorstep Team</h3>
-              <p className="text-gray-600">Your Pickup Request has been confirmed, and our executive will arrive at your doorstep as per your chosen date and time.</p>
-            </CardContent>
-          </Card>
-          <Card className="p-8">
-            <CardContent className="flex flex-col items-center text-center">
-              <Image src="/section3/check-mark.png" alt="Payment" width={64} height={64} className="mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Get Paid</h3>
-              <p className="text-gray-600">We can provide you with multiple payment options for a hassle-free and flexible payment experience.</p>
-            </CardContent>
-          </Card>
+          {/* Schedule Card */}
+          <div className="relative h-[400px] [perspective:1000px]">
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
+              {/* Front Side */}
+              <Card className="p-8 absolute inset-0 [backface-visibility:hidden]">
+                <CardContent className="flex flex-col items-center text-center h-full">
+                  <Image src="/section3/calendar.png" alt="Schedule" width={200} height={200} className="mb-4 flex-grow object-contain" />
+                  <h3 className="text-2xl font-bold">Schedule a pickup</h3>
+                </CardContent>
+              </Card>
+              {/* Back Side */}
+              <Card className="p-8 absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <CardContent className="flex flex-col items-center justify-center text-center h-full">
+                  <h3 className="text-2xl font-bold mb-4">Easy Scheduling</h3>
+                  <p className="text-gray-600">Book through our website or WhatsApp for hassle-free scheduling. Choose your preferred date and time for pickup.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Pickup Card */}
+          <div className="relative h-[400px] [perspective:1000px]">
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
+              {/* Front Side */}
+              <Card className="p-8 absolute inset-0 [backface-visibility:hidden]">
+                <CardContent className="flex flex-col items-center text-center h-full">
+                  <Image src="/section3/delivery.png" alt="Pickup" width={200} height={200} className="mb-4 flex-grow object-contain" />
+                  <h3 className="text-2xl font-bold">Pickup from your Doorstep</h3>
+                </CardContent>
+              </Card>
+              {/* Back Side */}
+              <Card className="p-8 absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <CardContent className="flex flex-col items-center justify-center text-center h-full">
+                  <h3 className="text-2xl font-bold mb-4">Professional Team</h3>
+                  <p className="text-gray-600">Our verified pickup team will arrive at your doorstep as per your chosen date and time, ensuring a smooth and reliable collection process.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Payment Card */}
+          <div className="relative h-[400px] [perspective:1000px]">
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
+              {/* Front Side */}
+              <Card className="p-8 absolute inset-0 [backface-visibility:hidden]">
+                <CardContent className="flex flex-col items-center text-center h-full">
+                  <Image src="/section3/check-mark.png" alt="Payment" width={200} height={200} className="mb-4 flex-grow object-contain" />
+                  <h3 className="text-2xl font-bold">Get Paid</h3>
+                </CardContent>
+              </Card>
+              {/* Back Side */}
+              <Card className="p-8 absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <CardContent className="flex flex-col items-center justify-center text-center h-full">
+                  <h3 className="text-2xl font-bold mb-4">Instant Payment</h3>
+                  <p className="text-gray-600">Get paid instantly through your preferred payment method with multiple payment options available for a hassle-free and secure transaction experience.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -121,19 +156,25 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card className="p-8 text-center">
             <CardContent>
-              <h3 className="text-5xl font-bold text-green-600 mb-4">500+</h3>
+              <h3 className="text-5xl font-bold text-green-600 mb-4">
+                <CountUp end={500} suffix="+" duration={2.5} enableScrollSpy />
+              </h3>
               <p className="text-gray-800 font-semibold">HAPPY CUSTOMERS</p>
             </CardContent>
           </Card>
           <Card className="p-8 text-center">
             <CardContent>
-              <h3 className="text-5xl font-bold text-green-600 mb-4">100%</h3>
+              <h3 className="text-5xl font-bold text-green-600 mb-4">
+                <CountUp end={100} suffix="%" duration={2.5} enableScrollSpy />
+              </h3>
               <p className="text-gray-800 font-semibold">CUSTOMER SATISFACTION</p>
             </CardContent>
           </Card>
           <Card className="p-8 text-center">
             <CardContent>
-              <h3 className="text-5xl font-bold text-green-600 mb-4">4,000+Kg</h3>
+              <h3 className="text-5xl font-bold text-green-600 mb-4">
+                <CountUp end={4000} suffix="+Kg" duration={2.5} enableScrollSpy />
+              </h3>
               <p className="text-gray-800 font-semibold">TOTAL SCRAP RECYCLED</p>
             </CardContent>
           </Card>
@@ -206,14 +247,14 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-4 bg-blue-50">
+      <section className="py-16 px-4 bg-blue-50 dark:bg-black">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">TALK TO US</h2>
-          <p className="text-gray-600 mb-8">
+          <h2 className="text-3xl font-bold mb-4 dark:text-white">TALK TO US</h2>
+          <p className="text-gray-600 dark:text-gray-300 mb-8">
             Have any questions? We are always open to talk about your business, new projects, creative opportunities and
             how we can help you.
           </p>
-          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
+          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white dark:border-green-500 dark:text-green-500 dark:hover:bg-green-500">
             GET IN TOUCH
           </Button>
         </div>
