@@ -19,20 +19,20 @@ export default function Home() {
               <p className="text-gray-600 mb-4">Our Service Available in 500092, 500093, 500039</p>
               <div className="grid grid-cols-4 gap-4 mb-6">
                 <div className="flex flex-col items-center">
-                  <Image src="/mobile-icon.png" alt="Mobile" width={24} height={24} />
-                  <span className="text-xs text-gray-600">Mobile</span>
+                  <Image src="/mobile-icon.png" alt="Mobile" width={32} height={32} />
+                  <span className="text-sm text-gray-600">Mobile</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Image src="/address-icon.png" alt="Address" width={24} height={24} />
-                  <span className="text-xs text-gray-600">Address</span>
+                  <Image src="/address-icon.png" alt="Address" width={32} height={32} />
+                  <span className="text-sm text-gray-600">Address</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Image src="/schedule-icon.png" alt="Schedule" width={24} height={24} />
-                  <span className="text-xs text-gray-600">Schedule</span>
+                  <Image src="/schedule-icon.png" alt="Schedule" width={32} height={32} />
+                  <span className="text-sm text-gray-600">Schedule</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Image src="/sell-icon.png" alt="Sell" width={24} height={24} />
-                  <span className="text-xs text-gray-600">Sell</span>
+                  <Image src="/sell-icon.png" alt="Sell" width={32} height={32} />
+                  <span className="text-sm text-gray-600">Sell</span>
                 </div>
               </div>
               <Link href="/scrap-form">
@@ -49,8 +49,8 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           <Card className="bg-card">
             <CardContent className="flex flex-col items-center p-6">
-              <Image src="/section2/bestrates.png" alt="Best Rates" width={64} height={64} />
-              <h3 className="mt-4 font-semibold">Best Rates</h3>
+              <Image src="/section2/bestrates.png" alt="Best Rates" width={80} height={80} />
+              <h3 className="mt-4 font-semibold text-lg">Best Rates</h3>
             </CardContent>
           </Card>
           <Card className="bg-card">
@@ -89,58 +89,131 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Process Cards Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="p-8">
+            <CardContent className="flex flex-col items-center text-center">
+              <Image src="/section3/calendar.png" alt="Schedule" width={80} height={80} className="mb-4" />
+              <h3 className="text-2xl font-bold mb-2">Schedule a pickup</h3>
+              <p className="text-gray-600">Book through our website or WhatsApp for hassle-free scheduling.</p>
+            </CardContent>
+          </Card>
+          <Card className="p-8">
+            <CardContent className="flex flex-col items-center text-center">
+              <Image src="/section3/delivery.png" alt="Pickup" width={80} height={80} className="mb-4" />
+              <h3 className="text-2xl font-bold mb-2">Pickup from your Doorstep Team</h3>
+              <p className="text-gray-600">Your Pickup Request has been confirmed, and our executive will arrive at your doorstep as per your chosen date and time.</p>
+            </CardContent>
+          </Card>
+          <Card className="p-8">
+            <CardContent className="flex flex-col items-center text-center">
+              <Image src="/section3/check-mark.png" alt="Payment" width={80} height={80} className="mb-4" />
+              <h3 className="text-2xl font-bold mb-2">Get Paid</h3>
+              <p className="text-gray-600">We can provide you with multiple payment options for a hassle-free and flexible payment experience.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="p-8 text-center">
+            <CardContent>
+              <h3 className="text-5xl font-bold text-green-600 mb-4">500+</h3>
+              <p className="text-gray-800 font-semibold">HAPPY CUSTOMERS</p>
+            </CardContent>
+          </Card>
+          <Card className="p-8 text-center">
+            <CardContent>
+              <h3 className="text-5xl font-bold text-green-600 mb-4">100%</h3>
+              <p className="text-gray-800 font-semibold">CUSTOMER SATISFACTION</p>
+            </CardContent>
+          </Card>
+          <Card className="p-8 text-center">
+            <CardContent>
+              <h3 className="text-5xl font-bold text-green-600 mb-4">4,000+Kg</h3>
+              <p className="text-gray-800 font-semibold">TOTAL SCRAP RECYCLED</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Services For Business And Household</h2>
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-xl font-semibold text-green-600 mb-4">For Household</h3>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-600 rounded-full" />
-                  Free doorstep pickup for your scrap items
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-600 rounded-full" />
-                  ISO certified digital weighing scale for accurate measurements
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-600 rounded-full" />
-                  Best value for your scrap items
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-green-600 mb-4">For Business</h3>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-600 rounded-full" />
-                  Same day pickup available for your scrap items
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-600 rounded-full" />
-                  ISO certified digital weighing scale for accurate measurements
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-600 rounded-full" />
-                  We provide pickup services for all types of scrap materials
-                </li>
-              </ul>
-            </div>
+            <Card className="p-8">
+              <CardContent>
+                <h3 className="text-xl font-semibold text-green-600 mb-4 text-center">For Household</h3>
+                <ul className="space-y-2 mb-8">
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-600 rounded-full" />
+                    Free doorstep pickup for your scrap items
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-600 rounded-full" />
+                    ISO certified digital weighing scale for accurate measurements
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-600 rounded-full" />
+                    Best value for your scrap items
+                  </li>
+                </ul>
+                <div className="flex justify-center">
+                  <Image
+                    src="/services/house.png"
+                    alt="Household Services"
+                    width={250}
+                    height={250}
+                    className="object-contain"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="p-8">
+              <CardContent>
+                <h3 className="text-xl font-semibold text-green-600 mb-4 text-center">For Business</h3>
+                <ul className="space-y-2 mb-8">
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-600 rounded-full" />
+                    Same day pickup available for your scrap items
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-600 rounded-full" />
+                    ISO certified digital weighing scale for accurate measurements
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-600 rounded-full" />
+                    We provide pickup services for all types of scrap materials
+                  </li>
+                </ul>
+                <div className="flex justify-center">
+                  <Image
+                    src="/services/office-building.png"
+                    alt="Business Services"
+                    width={250}
+                    height={250}
+                    className="object-contain"
+                  />
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-4 bg-blue-50">
+      <section className="py-16 px-4 bg-blue-50 dark:bg-blue-950/20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">TALK TO US</h2>
-          <p className="text-gray-600 mb-8">
+          <h2 className="text-3xl font-bold mb-4 dark:text-white">TALK TO US</h2>
+          <p className="text-gray-600 dark:text-gray-300 mb-8">
             Have any questions? We are always open to talk about your business, new projects, creative opportunities and
             how we can help you.
           </p>
-          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
+          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white dark:border-green-500 dark:text-green-500 dark:hover:bg-green-500">
             GET IN TOUCH
           </Button>
         </div>
