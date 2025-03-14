@@ -14,7 +14,7 @@ const scrapItems = [
   { name: "Steel", rate: "Rs 40/kg", icon: "/items/steel.png" },
   { name: "Aluminium", rate: "Rs 110/kg", icon: "/items/aluminium.png" },
   { name: "Plastic", rate: "Rs 6/kg", icon: "/items/plastic.png" },
-  { name: "Glass Bottle", rate: "Rs 0", icon: "/items/glass.png" },
+  { name: "Glass Bottle", rate: "Rs 0", icon: "/items/glassbottle.png" },
   { name: "Brass", rate: "Rs 320/kg", icon: "/items/brass.png" },
 ]
 
