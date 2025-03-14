@@ -54,7 +54,7 @@ export default function ScrapRates() {
       {/* Hero Section */}
       <section
         className="relative h-[400px] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: 'url("/scraprates/hero.png")' }}
+        style={{ backgroundImage: 'url("/landingpage/footerimg.jpeg")' }}
       >
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 text-center text-white">

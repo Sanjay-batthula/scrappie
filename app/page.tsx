@@ -246,7 +246,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-4 bg-blue-50 dark:bg-black">
+      <section className="py-16 px-4 bg-cover bg-center" style={{ backgroundImage: "url('/landingpage/footerimg.jpeg')" }}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 dark:text-white">TALK TO US</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-8">
