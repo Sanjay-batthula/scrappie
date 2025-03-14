@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ImageCarousel } from "@/components/image-carousel"
 import CountUp from "react-countup"
-import { HoverBorderGradient } from "@/components/hover-border-gradient"
 
 export default function Home() {
   return (

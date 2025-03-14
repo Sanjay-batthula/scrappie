@@ -7,16 +7,16 @@ import Autoplay from "embla-carousel-autoplay"
 
 const carouselImages = [
   {
-    url: "/placeholder.svg?height=600&width=1200",
-    alt: "Recycling Facility",
+    url: "/landingpage/pic1.avif",
+    alt: "Picture 1",
   },
   {
-    url: "/placeholder.svg?height=600&width=1200",
-    alt: "Paper Recycling",
+    url: "/landingpage/pic2.jpg",
+    alt: "Picture 2",
   },
   {
-    url: "/placeholder.svg?height=600&width=1200",
-    alt: "Environmental Conservation",
+    url: "/landingpage/pic3.png",
+    alt: "Picture 3",
   },
 ]
 
