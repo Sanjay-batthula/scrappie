@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 
 const carouselImages = [
@@ -46,8 +46,6 @@ export function ImageCarousel() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="left-4" />
-      <CarouselNext className="right-4" />
     </Carousel>
   )
 }
