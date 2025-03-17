@@ -41,25 +41,25 @@ export default function Home() {
       {/* Features Section */}
       <section className="py-16 px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-green-600 hover:border-2">
             <CardContent className="flex flex-col items-center p-8">
               <Image src="/section2/bestrates.png" alt="Best Rates" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
               <h3 className="mt-6 text-xl font-semibold">Best Rates</h3>
             </CardContent>
           </Card>
-          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-green-600 hover:border-2">
             <CardContent className="flex flex-col items-center p-8">
               <Image src="/section2/verified.png" alt="Verified Scrap Pickup Team" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
               <h3 className="mt-6 text-xl font-semibold">Verified Scrap Pickup Team</h3>
             </CardContent>
           </Card>
-          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-green-600 hover:border-2">
             <CardContent className="flex flex-col items-center p-8">
               <Image src="/section2/digital.png" alt="Digital Weighing Scale" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
               <h3 className="mt-6 text-xl font-semibold">Digital Weighing Scale</h3>
             </CardContent>
           </Card>
-          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-green-600 hover:border-2">
             <CardContent className="flex flex-col items-center p-8">
               <Image src="/section2/hassle.png" alt="Hassle free Pickup" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
               <h3 className="mt-6 text-xl font-semibold">Hassle free Pickup</h3>
