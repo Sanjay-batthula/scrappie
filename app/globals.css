@@ -91,3 +91,35 @@
   transform: rotateY(180deg);
 }
 
+@layer utilities {
+  .btn-slide-effect {
+    @apply relative overflow-hidden transition-transform duration-200 hover:scale-105;
+  }
+
+  .btn-slide-effect::after {
+    @apply content-[''] absolute left-0 top-0 h-full w-full -z-[1] transition-transform duration-200 ease-out;
+    transform: translateX(-100%) rotate(10deg);
+    transform-origin: top left;
+  }
+
+  .btn-slide-effect:hover::after {
+    @apply transform translate-x-0;
+  }
+
+  .btn-effect-3 {
+    @apply relative overflow-hidden transition-all duration-200;
+  }
+
+  .btn-effect-3:before {
+    @apply content-['→'] absolute inset-0 flex items-center justify-center text-3xl -translate-y-full transition-transform duration-200;
+  }
+
+  .btn-effect-3:hover {
+    @apply [text-indent:-9999px];
+  }
+
+  .btn-effect-3:hover:before {
+    @apply translate-y-0 [text-indent:0];
+  }
+}
+

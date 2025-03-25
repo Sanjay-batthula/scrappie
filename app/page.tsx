@@ -28,8 +28,8 @@ export default function Home() {
                 className="mb-6"
               />
               <Link href="/scrap-form">
-                <Button className="bg-green-600 hover:bg-green-700 rounded-full px-8 py-2">
-                  <span className="text-xl">SELL NOW</span>
+                <Button className="btn-effect-3 bg-green-600 hover:text-green-950 rounded-full px-8 py-2">
+                  <span className="text-xl relative z-10">SELL NOW</span>
                 </Button>
               </Link>
             </div>
@@ -76,8 +76,8 @@ export default function Home() {
               <h2 className="text-4xl font-bold mb-4">Book a Pickup Request Now</h2>
               <p className="text-gray-600 mb-8">Make a positive impact on our planet by recycling your waste items.</p>
               <Link href="/scrap-form">
-                <Button className="bg-green-600 hover:bg-green-700 rounded-full px-8 py-2">
-                  <span className="text-xl">SELL NOW</span>
+                <Button className="btn-effect-3 bg-green-600 hover:text-green-950 rounded-full px-8 py-2">
+                  <span className="text-xl relative z-10">SELL NOW</span>
                 </Button>
               </Link>
             </CardContent>
@@ -253,8 +253,8 @@ export default function Home() {
             Have any questions? We are always open to talk about your business, new projects, creative opportunities and
             how we can help you.
           </p>
-          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white dark:border-green-500 dark:text-green-500 dark:hover:bg-green-500">
-            GET IN TOUCH
+          <Button variant="outline" className="btn-slide-effect border-green-600 text-green-600 after:bg-green-600 hover:text-white dark:border-green-500 dark:text-green-500">
+            <span className="relative z-10">GET IN TOUCH</span>
           </Button>
         </div>
       </section>
