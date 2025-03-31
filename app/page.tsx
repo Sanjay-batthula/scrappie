@@ -27,7 +27,7 @@ export default function Home() {
                 height={100} 
                 className="mb-6"
               />
-              <Link href="/scrap-form">
+              <Link href="/scrap-rates">
                 <Button className="btn-effect-3 bg-green-600 hover:text-green-950 rounded-full px-8 py-2">
                   <span className="text-xl relative z-10">SELL NOW</span>
                 </Button>
@@ -75,7 +75,7 @@ export default function Home() {
             <CardContent>
               <h2 className="text-4xl font-bold mb-4">Book a Pickup Request Now</h2>
               <p className="text-gray-600 mb-8">Make a positive impact on our planet by recycling your waste items.</p>
-              <Link href="/scrap-form">
+              <Link href="/scrap-rates">
                 <Button className="btn-effect-3 bg-green-600 hover:text-green-950 rounded-full px-8 py-2">
                   <span className="text-xl relative z-10">SELL NOW</span>
                 </Button>
