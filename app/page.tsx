@@ -13,6 +13,7 @@ export default function Home() {
       {/* Hero Section with Carousel */}
       <section className="relative">
         <ImageCarousel />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="text-center text-white">
             <h1 className="text-5xl font-bold mb-4">SCRAPPIE</h1>
@@ -49,33 +50,36 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {[
-        { icon: "/section2/bestrates.png", title: "Best Rates" },
-        { icon: "/section2/verified.png", title: "Verified Scrap Pickup Team" },
-        { icon: "/section2/digital.png", title: "Digital Weighing Scale" },
-        { icon: "/section2/hassle.png", title: "Hassle free Pickup" }
+            { icon: "/section2/bestrates.png", title: "Best Rates", description: "We offer the most competitive prices for your scrap materials." },
+            { icon: "/section2/verified.png", title: "Verified Scrap Pickup Team", description: "Our professional team is verified and trained for safe and efficient pickups." },
+            { icon: "/section2/digital.png", title: "Digital Weighing Scale", description: "We use certified digital scales for accurate and transparent measurements." },
+            { icon: "/section2/hassle.png", title: "Hassle-free Pickup", description: "Enjoy a seamless experience with our convenient and timely pickup service." }
           ].map((item, index) => (
-        <div key={index} className="group perspective-1000">
-          <Card className="bg-white/80 backdrop-blur-sm transform-gpu transition-all duration-500 hover:shadow-2xl hover:scale-105 group-hover:rotate-y-180 preserve-3d">
-            <CardContent className="flex flex-col items-center p-8 relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
-          <div className="relative">
-            <Image 
-              src={item.icon} 
-              alt={item.title} 
-              width={96} 
-              height={96} 
-              className="transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12"
-            />
-            <div className="absolute inset-0 bg-green-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          </div>
-          <h3 className="mt-6 text-xl font-semibold text-center relative">
-            <span className="bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent">
-              {item.title}
-            </span>
-          </h3>
-            </CardContent>
-          </Card>
-        </div>
+            <div key={index} className="group perspective-1000 h-64">
+              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <Card className="absolute w-full h-full [backface-visibility:hidden]">
+                  <CardContent className="flex flex-col items-center justify-center p-8 h-full">
+                    <Image
+                      src={item.icon}
+                      alt={item.title}
+                      width={96}
+                      height={96}
+                    />
+                    <h3 className="mt-6 text-xl font-semibold text-center">
+                      <span className="bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent">
+                        {item.title}
+                      </span>
+                    </h3>
+                  </CardContent>
+                </Card>
+                <Card className="absolute w-full h-full [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <CardContent className="flex flex-col items-center justify-center text-center p-8 h-full">
+                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                    <p className="text-gray-600">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -273,4 +277,3 @@ export default function Home() {
     </div>
   )
 }
-
