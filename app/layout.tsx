@@ -5,13 +5,13 @@ import "./globals.css"
 import { Navbar } from "@/components/navbar"
 import { ChatBot } from "@/components/chat-bot"
 import { ThemeProvider } from "@/components/theme-provider"
+import Footer from "@/components/footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Scrappie - Sell Scrap Online",
   description: "Transform waste into value with Scrappie's online scrap selling platform",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -26,12 +26,9 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <ChatBot />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
-
-
-import './globals.css'
