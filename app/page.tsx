@@ -39,32 +39,44 @@ export default function Home() {
 
       {/* Rest of the components remain the same */}
       {/* Features Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 relative overflow-hidden">
+        {/* Animated background shapes */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute w-64 h-64 bg-green-200/30 rounded-full blur-3xl animate-blob left-0 top-0"></div>
+          <div className="absolute w-64 h-64 bg-blue-200/30 rounded-full blur-3xl animate-blob animation-delay-2000 right-0 bottom-0"></div>
+          <div className="absolute w-64 h-64 bg-purple-200/30 rounded-full blur-3xl animate-blob animation-delay-4000 left-1/2 top-1/2"></div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-green-600 hover:border-2">
-            <CardContent className="flex flex-col items-center p-8">
-              <Image src="/section2/bestrates.png" alt="Best Rates" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
-              <h3 className="mt-6 text-xl font-semibold">Best Rates</h3>
+          {[
+        { icon: "/section2/bestrates.png", title: "Best Rates" },
+        { icon: "/section2/verified.png", title: "Verified Scrap Pickup Team" },
+        { icon: "/section2/digital.png", title: "Digital Weighing Scale" },
+        { icon: "/section2/hassle.png", title: "Hassle free Pickup" }
+          ].map((item, index) => (
+        <div key={index} className="group perspective-1000">
+          <Card className="bg-white/80 backdrop-blur-sm transform-gpu transition-all duration-500 hover:shadow-2xl hover:scale-105 group-hover:rotate-y-180 preserve-3d">
+            <CardContent className="flex flex-col items-center p-8 relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
+          <div className="relative">
+            <Image 
+              src={item.icon} 
+              alt={item.title} 
+              width={96} 
+              height={96} 
+              className="transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12"
+            />
+            <div className="absolute inset-0 bg-green-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+          <h3 className="mt-6 text-xl font-semibold text-center relative">
+            <span className="bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent">
+              {item.title}
+            </span>
+          </h3>
             </CardContent>
           </Card>
-          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-green-600 hover:border-2">
-            <CardContent className="flex flex-col items-center p-8">
-              <Image src="/section2/verified.png" alt="Verified Scrap Pickup Team" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
-              <h3 className="mt-6 text-xl font-semibold">Verified Scrap Pickup Team</h3>
-            </CardContent>
-          </Card>
-          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-green-600 hover:border-2">
-            <CardContent className="flex flex-col items-center p-8">
-              <Image src="/section2/digital.png" alt="Digital Weighing Scale" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
-              <h3 className="mt-6 text-xl font-semibold">Digital Weighing Scale</h3>
-            </CardContent>
-          </Card>
-          <Card className="bg-card transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-green-600 hover:border-2">
-            <CardContent className="flex flex-col items-center p-8">
-              <Image src="/section2/hassle.png" alt="Hassle free Pickup" width={96} height={96} className="transition-transform duration-300 hover:scale-110" />
-              <h3 className="mt-6 text-xl font-semibold">Hassle free Pickup</h3>
-            </CardContent>
-          </Card>
+        </div>
+          ))}
         </div>
       </section>
 
