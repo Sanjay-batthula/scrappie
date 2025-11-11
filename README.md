@@ -123,3 +123,7 @@ A future where **waste equals opportunity** — and every material finds a secon
 - Tyres  
 
 ---
+
+## 🧩 Tagline
+
+“Transforming Waste into Value — One Pickup at a Time.”
