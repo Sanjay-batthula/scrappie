@@ -1,6 +1,10 @@
 import { Goal } from "lucide-react"
 import { NextRequest } from "next/server"
 
+// To this spreadsheet the data will go
+// https://docs.google.com/spreadsheets/d/1Z1W_xVFb5NMOtZSr7qo2JN8oV3GJ_-yalGnrjy4PqAg/edit?usp=sharing
+
+
 const GSCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxwQMkLIVCyC4_0lkI78WU-6TcyschS17iyZY5mOvUWZSk_tkNsi-aK1wPUek1pDNyz/exec"
 
