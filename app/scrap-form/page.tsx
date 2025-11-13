@@ -39,19 +39,37 @@ const scrapItems = [
 
 export default function ScrapForm() {
   const [open, setOpen] = useState(false)
-  const form = useForm({
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: { items: [] },
   })
 
-  async function onSubmit(values) {
-    await fetch("https://script.google.com/macros/s/AKfycbwmTKaQjYH8_t6MExyurzWIdLBsYtHJ1TcOCnhF4L_LHbyyXUc7ZnFouzWMoIgcoV_C/exec", {
-      method: "POST",
-      body: JSON.stringify(values),
-      headers: { "Content-Type": "application/json" }
-    })
-    setOpen(true)
-    form.reset()
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const res = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      })
+
+      if (!res.ok) {
+        const text = await res.text()
+        setErrorMessage(text || "Server error while submitting request")
+        setOpen(true)
+        return
+      }
+
+      // success
+      setErrorMessage(null)
+      setOpen(true)
+      form.reset()
+    } catch (err) {
+      setErrorMessage(
+        err instanceof Error ? `Network error: ${err.message}` : "Unknown network error"
+      )
+      setOpen(true)
+    }
   }
 
   return (
@@ -151,9 +169,13 @@ export default function ScrapForm() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Request Submitted Successfully</DialogTitle>
+            <DialogTitle>{errorMessage ? "Submission Error" : "Request Submitted Successfully"}</DialogTitle>
           </DialogHeader>
-          <p>Your scrap pickup request has been recorded.</p>
+          {errorMessage ? (
+            <p className="text-red-600">{errorMessage}</p>
+          ) : (
+            <p>Your scrap pickup request has been recorded.</p>
+          )}
           <Button className="mt-4 w-full" onClick={() => setOpen(false)}>Close</Button>
         </DialogContent>
       </Dialog>
